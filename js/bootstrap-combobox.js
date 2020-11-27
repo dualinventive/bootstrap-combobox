@@ -428,10 +428,12 @@
       this.focused = false;
       var val = this.$element.val();
       if (!this.selected && val !== '' ) {
-        if(that.clearIfNoMatch)
+        if(that.clearIfNoMatch) {
           this.$element.val('');
+          this.$target.val('').trigger('change');
+        }
+
         this.$source.val('').trigger('change');
-        this.$target.val('').trigger('change');
       }
       if (!this.mousedover && this.shown) {setTimeout(function () { that.hide(); }, 200);}
     }
