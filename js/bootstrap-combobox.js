@@ -288,7 +288,7 @@
 
   , clearTarget: function () {
     this.$source.val('');
-    this.$target.val('');
+    this.$target.val(this.clearIfNoMatch ? '': this.$element.val());
     this.$container.removeClass('combobox-selected');
     this.selected = false;
   }
